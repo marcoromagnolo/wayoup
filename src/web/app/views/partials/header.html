@@ -1,0 +1,40 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/" ng-bind="CONFIG.NAME"></a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="{{'MENU_SEARCH_PLACEHOLDER' | translate}}">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+        </div>
+        <button class="btn"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span>{{'MENU_FILTER' | translate}}</button>
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a ng-href="#/"><span class="glyphicon glyphicon-home"></span> {{'MENU_HOME' | translate}}</a></li>
+        <li><a href="#" ng-click="openProfile()" ng-show="isAuthenticated"><span class="glyphicon glyphicon-user"></span> {{'MENU_PROFILE' | translate}}</a></li>
+        <li><a href="#" ng-click="openAlerts()"><span class="glyphicon glyphicon-bell"></span> {{'MENU_ALERTS' | translate}}</a></li>
+        <li><a href="#" ng-click="openRegisterDialog()" ng-show="!isAuthenticated"><span class="glyphicon glyphicon-edit"></span> {{'MENU_REGISTER' | translate}}</a></li>
+        <li><a href="#" ng-click="openLoginDialog()"><span class="glyphicon glyphicon-user"></span> {{'MENU_LOGIN' | translate}}</a></li>
+        <li class="dropdown" ng-show="isAuthenticated">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog"></span> {{'MENU_SETTINGS' | translate}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Generale</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Lingua</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Notizie</a></li>
+            <li><a href="#">Operazioni</a></li>
+          </ul>
+        </li>
+        <li><a href="#" ng-click="logout()" ng-show="isAuthenticated"><span class="glyphicon glyphicon-off"></span>{{'MENU_LOGOUT' | translate}}</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,1 @@
+DROP DATABASE remote:localhost/wayoup root password;
